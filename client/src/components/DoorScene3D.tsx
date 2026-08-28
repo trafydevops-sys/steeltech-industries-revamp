@@ -13,7 +13,7 @@ function SteelDoor() {
   });
 
   return (
-    <group ref={groupRef} scale={0.6}>
+    <group ref={groupRef} scale={0.85}>
       {/* Frame */}
       <RoundedBox args={[2.1, 3.1, 0.18]} radius={0.03} smoothness={4} position={[0, 0, -0.12]}>
         <meshStandardMaterial color="#17191a" metalness={0.6} roughness={0.6} />
@@ -55,7 +55,7 @@ export default function DoorScene3D() {
 
       <Suspense fallback={null}>
         <SteelDoor />
-        <ContactShadows position={[0, -0.95, 0]} opacity={0.5} scale={4} blur={2.2} far={1.2} color="#000000" />
+        <ContactShadows position={[0, -1.32, 0]} opacity={0.5} scale={5} blur={2.2} far={1.6} color="#000000" />
       </Suspense>
 
       <OrbitControls
