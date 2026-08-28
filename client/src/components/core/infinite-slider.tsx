@@ -31,7 +31,12 @@ export function InfiniteSlider({ children, gap = 16, duration = 25, durationOnHo
     const ro = new ResizeObserver(measure);
     ro.observe(el);
     return () => ro.disconnect();
-  }, [direction, children]);
+    // `children` is intentionally excluded: it's a fresh array/element reference on every parent render
+    // (e.g. `.map()`-generated JSX), which would tear down and rebuild the ResizeObserver on every render
+    // and race the animation's contentSize state. The ResizeObserver itself already re-measures whenever
+    // the rendered content's actual size changes (including images loading in).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [direction]);
 
   useEffect(() => {
     if (!contentSize) return;

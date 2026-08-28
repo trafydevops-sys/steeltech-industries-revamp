@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { ArrowDownRight, ArrowRight, Check, MoveUpRight, ShieldCheck } from "lucide-react";
 import Layout from "@/components/Layout";
 import HeroDoorSlider from "@/components/HeroDoorSlider";
+import { InfiniteSlider } from "@/components/core/infinite-slider";
 import Scene3DBoundary from "@/components/Scene3DBoundary";
 import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { SiteImage } from "@/components/SiteImage";
@@ -242,11 +243,11 @@ export default function Home() {
           <p className="eyebrow" style={{ textAlign: "center" }}>
             Trusted by
           </p>
-          <div className="logo-strip">
-            {clients.slice(0, 12).map((client) => (
-              <img key={client.file} src={client.logo} alt={client.name} loading="lazy" />
+          <InfiniteSlider gap={56} duration={32} durationOnHover={70} className="logo-strip">
+            {clients.map((client) => (
+              <img key={client.file} src={client.logo} alt={client.name} loading="lazy" className="logo-strip-img" />
             ))}
-          </div>
+          </InfiniteSlider>
           <Link href="/clientele" className="text-link" style={{ display: "flex", justifyContent: "center", marginTop: 28 }}>
             See the full client list <ArrowRight size={16} />
           </Link>

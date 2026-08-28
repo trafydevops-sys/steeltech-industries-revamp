@@ -42,9 +42,8 @@ button, input, textarea { font: inherit; }
 .stars-bg { background-image: radial-gradient(1px 1px at 20% 30%, white, transparent), radial-gradient(1px 1px at 60% 70%, white, transparent), radial-gradient(1px 1px at 50% 50%, white, transparent), radial-gradient(1px 1px at 80% 10%, white, transparent), radial-gradient(1px 1px at 90% 60%, white, transparent), radial-gradient(1px 1px at 33% 80%, white, transparent), radial-gradient(1px 1px at 15% 60%, white, transparent), radial-gradient(1px 1px at 70% 40%, white, transparent); background-size: 200% 200%, 180% 180%, 250% 250%, 220% 220%, 190% 190%, 240% 240%, 210% 210%, 230% 230%; background-position: 0% 0%, 40% 40%, 60% 60%, 20% 20%, 80% 80%, 30% 30%, 70% 70%, 50% 50%; opacity: 0.3; }
 
 /* ---------- Client logo strip (Home teaser) ---------- */
-.logo-strip { display: flex; flex-wrap: wrap; gap: 28px 36px; align-items: center; justify-content: center; }
-.logo-strip img { height: 34px; width: auto; object-fit: contain; filter: grayscale(1) opacity(.7); transition: filter .2s; }
-.logo-strip img:hover { filter: none; }
+.logo-strip { width: 100%; -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); }
+.logo-strip-img { height: 40px; width: auto; object-fit: contain; flex: none; }
 
 /* ---------- Client dome gallery ---------- */
 .client-dome { width: 100%; height: 560px; position: relative; background: transparent; }
